@@ -29,20 +29,29 @@ You can use several different coding environments and you can use real hardware 
 3. Simulate events (e.g., smoke detection) by triggering the relevant interrupt.
 
 ## Code Structure
-Start
-  └── Initialize Variables and Setup Interrupt
-      └── Loop Execution:
-            ├── Update Sensor Data
-            │     ├── Read Temperature
-            │     ├── Read Humidity
-            │     └── Read Smoke Level
-            ├── Display Sensor Data
-            ├── Simulate Memory Management
-            └── Handle Smoke Alerts
+    Start
+    
+    └── Initialize Variables and Setup Interrupt
+    
+        └── Loop Execution:
+        
+              ├── Update Sensor Data
+              
+              │     ├── Read Temperature
+              
+              │     ├── Read Humidity
+              
+              │     └── Read Smoke Level
+              
+              ├── Display Sensor Data
+              
+              ├── Simulate Memory Management
+              
+              └── Handle Smoke Alerts
+              
 ### Code Files Explanation
 - main.cpp: Controls the main loop, synchronization, and central updates.
 - sensor.cpp: Handles sensor data simulation and display.
-- task_scheduler.cpp (optional): Provides modular task scheduling functionality.
 - error_handling.cpp: Manages memory simulation and alerts.
 - platformio.ini: Configuration file for PlatformIO.
 
