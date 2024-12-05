@@ -2,7 +2,7 @@
 
 ## Project Goals
 In this course we learned what goes into designing operating systems and about how different types of devices require different types of operating systems. For this project we were tasked with creating a novel product that is related to wildfires and demonstrates knowledge on operating systems concepts. 
-We decided to design a wildfire monitoring system that uses sensor data to track temperature, humidity, and smoke levels. We wanted the main executable to implement OS features including multitasking, task prioritization, event-driven programming, memory management, and error handling. We also wanted to provide a user-friendly interface to view the sensor data by using a serial monitor.
+We decided to design a wildfire monitoring system that uses sensor data to track temperature, humidity, and smoke levels. We wanted the main executable to implement OS features including  task scheduling, interrupt handling, memory management, and synchronization. We also wanted to provide a user-friendly interface to view the sensor data by using a serial monitor.
 
 ## Significance and Novelty of the Project
 Wildfires pose a significant global threat, causing loss of life, destruction of property, and environmental damage. Timely detection of wildfire conditions can help mitigate these risks. Embedded systems are ideal for such applications because of their low cost, scalability, and energy efficiency.
@@ -29,56 +29,48 @@ You can use several different coding environments and you can use real hardware 
 3. Simulate events (e.g., smoke detection) by triggering the relevant interrupt.
 
 ## Code Structure
-+-----------------------------------------+
-| Start                                   |
-+-----------------------------------------+
-        |
-        v
-+----------------+       +----------------+
-| Sensor Modules | --->  | Task Scheduler |
-+----------------+       +----------------+
-        |                         |
-        v                         v
-+----------------+       +----------------+
-| Event Handling | <-->  | Serial Output  |
-+----------------+       +----------------+
-        |
-        v
-+----------------+
-| Error Handling |
-+----------------+
-        |
-        v
-      Finish
-
-1. Sensor Modules: Functions to simulate temperature, humidity, and smoke level readings.
-2. Task Scheduler: Implements cooperative multitasking by scheduling tasks at regular intervals.
-3. Event Handling: Interrupt-based handling of critical events, such as detecting a smoke alert.
-4. Serial Output: Outputs sensor data and alert messages to the serial monitor for user interaction.
-5. Error Handling: Handles runtime issues, such as memory allocation failures, with recovery strategies.
+Start
+  └── Initialize Variables and Setup Interrupt
+      └── Loop Execution:
+            ├── Update Sensor Data
+            │     ├── Read Temperature
+            │     ├── Read Humidity
+            │     └── Read Smoke Level
+            ├── Display Sensor Data
+            ├── Simulate Memory Management
+            └── Handle Smoke Alerts
+### Code Files Explanation
+- main.cpp: Controls the main loop, synchronization, and central updates.
+- sensor.cpp: Handles sensor data simulation and display.
+- task_scheduler.cpp (optional): Provides modular task scheduling functionality.
+- error_handling.cpp: Manages memory simulation and alerts.
+- platformio.ini: Configuration file for PlatformIO.
 
 ## List of Functionalities and Verification Results
 ### Functionalities
-1. Multitasking: Schedules tasks like sensor readings and alert generation using a cooperative scheduler.
-2. Event-driven Programming: Uses interrupts to handle critical events, such as smoke level detection.
-3. Task Prioritization: Prioritizes tasks dynamically, ensuring urgent tasks (e.g., alerts) are handled first.
-4. Memory Management: Simulates dynamic memory allocation for sensor data processing.
-5. Error Handling: Recovers from runtime errors (e.g., memory allocation failures) and continues operation.
-6. User-friendly Serial Output: Displays sensor data and alerts in a readable format on the serial monitor.
-
+- Sensor Data Simulation:
+        - Simulates temperature, humidity, and smoke level readings.
+        - Outputs sensor data at regular intervals.
+- Interrupt Handling:
+        - Detects and responds to smoke alerts using an interrupt service routine.
+- Memory Management:
+        - Simulates dynamic memory allocation with error handling.
+- Synchronized Outputs:
+        - Ensures clear, readable output for all sensor data and memory operations.
+  
 ### Verification Results
-- Task Scheduling: Verified using sensor data updates at the expected intervals (5s for temperature, 3s for humidity, 10s for smoke).
-- Interrupt Handling: Triggered a smoke alert interrupt and observed immediate response in the serial monitor.
-- Memory Management: Simulated memory allocation errors and verified recovery strategies in the serial output.
+- Tested in SimulIDE to ensure proper timing and functionality.
+- Verified smoke alert logic by exceeding threshold values.
+- Observed correct handling of memory allocation errors with recovery mechanisms.
 
 ## Achievement
 The project successfully demonstrates the following:
-- Implementation of multitasking, prioritization, event handling, and error recovery in a microcontroller environment.
-- A functional wildfire monitoring system with real-time data and critical alerts.
+- Successfully demonstrates OS concepts while simulating a real-world application.
+- Efficient Execution: All functionalities, including sensor updates, alerts, and memory management, operate as intended in synchronized intervals.
 - OS concepts integrated into embedded system design, bridging theory with application.
 
 ## Discussion and Conclusions
 ### Project Issues and Limitations
 Since we had limited time and resources to implement the project, it had to be done as a simulation instead of using hardware hands-on and being able to test the real world functionality of the design. Another limitation was that since we were using the Arduino platform, there isn't real multitasking support meaning multitasking features had to be simulated as the real execution on an Arduino device is single-threaded. Also, since the project is simulated, we were not able to work with physical sensors to interact with real environmental conditions.
 ### Learning Outcomes
-The project reinforced some key concepts we learned during the course such as a practical understanding of multitasking, task scheduling, and event-driven programming. It also help us understand how a lot of concepts that go into designing operating systems are necessary for programmers to understand when building programs and working with hardware devices.
+The project reinforced some key concepts we learned during the course such as a practical understanding of multitasking, task scheduling, and event-driven programming. It also help us understand how a lot of concepts that go into designing operating systems are necessary for programmers to understand when building programs and working with hardware devices. It also reinforced the importance of sychronization, both in terms of the tools provided by the operating system, and the code written by programmers.
