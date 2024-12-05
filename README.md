@@ -77,6 +77,7 @@ The project successfully demonstrates the following:
 - Successfully demonstrates OS concepts while simulating a real-world application.
 - Efficient Execution: All functionalities, including sensor updates, alerts, and memory management, operate as intended in synchronized intervals.
 - OS concepts integrated into embedded system design, bridging theory with application.
+ ![runtime](472 images/Runtime example.png)
 
 ## Discussion and Conclusions
 ### Project Issues and Limitations
