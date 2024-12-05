@@ -21,8 +21,14 @@ You can use several different coding environments and you can use real hardware 
 ### Simulating in SimulIDE
 1. Download and install SimulIDE (a free microcontroller simulation tool).
 2. Open SimulIDE and drag an Arduino Uno board onto the workspace.
+   ![arduino uno](https://github.com/user-attachments/assets/10cb2503-0f66-41e9-9962-2c5dcdc34ec2)
+
 3. Load the .hex file into the simulated Arduino board.
+   ![load hex](https://github.com/user-attachments/assets/40183ad9-b4b3-4429-bf59-bcb25a6e53b7)
+
 4. Add a serial monitor in SimulIDE to view real-time outputs.
+   ![serial output](https://github.com/user-attachments/assets/53721943-6e04-498a-be24-bba944500f51)
+
 ### Usage
 1. Run the simulation in SimulIDE.
 2. View sensor data and alerts on the serial monitor.
@@ -77,7 +83,7 @@ The project successfully demonstrates the following:
 - Successfully demonstrates OS concepts while simulating a real-world application.
 - Efficient Execution: All functionalities, including sensor updates, alerts, and memory management, operate as intended in synchronized intervals.
 - OS concepts integrated into embedded system design, bridging theory with application.
- ![runtime](472 images/Runtime example.png)
+![Runtime example](https://github.com/user-attachments/assets/926a630e-f3e2-469d-876f-d53bf4117d19)
 
 ## Discussion and Conclusions
 ### Project Issues and Limitations
